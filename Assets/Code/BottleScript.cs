@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class BottleLifeSpan : MonoBehaviour
+public class BottleScript : MonoBehaviour
 {
     public float lifeSpan = 10f;
     public GameObject Explosion;

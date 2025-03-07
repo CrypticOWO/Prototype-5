@@ -1,12 +1,15 @@
 using UnityEngine;
+using TMPro;
 
 public class BottleFlip : MonoBehaviour
 {
     public GameObject bottlePrefab;
     public Transform spawnPoint;
-    public float flipForce = 10f;
+    public float flipForce = 4f;
     public float forceMultiplier = 1f;
-    public float torqueMultiplier = 5f;
+    public float torqueMultiplier = 0.00001f;
+    public int Attempts;
+    public TMP_Text AttemptsText;
 
     private Vector3 lastMousePosition;
     private float flickSpeed;
@@ -27,6 +30,8 @@ public class BottleFlip : MonoBehaviour
 
             
             GameObject bottle = Instantiate(bottlePrefab, spawnPoint.position, Quaternion.identity);
+            Attempts++;
+            AttemptsText.text = "Attempts: " + Attempts;
             
             
             rb = bottle.GetComponent<Rigidbody>();
